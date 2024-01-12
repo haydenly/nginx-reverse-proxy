@@ -3,5 +3,12 @@ services:
     container_name: uvicorn-service
     build: uvicorn
     ports:
-      - 80:80
+      - 8000:8000
     
+  proxy:
+    container_name: auth-proxy
+    build: proxy
+    ports:
+      - 80:80
+    depends_on:
+      - uvicorn-service
