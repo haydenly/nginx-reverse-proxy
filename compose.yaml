@@ -1,0 +1,7 @@
+services:
+  uvicorn-service:
+    container_name: uvicorn-service
+    build: uvicorn
+    ports:
+      - 80:80
+    
